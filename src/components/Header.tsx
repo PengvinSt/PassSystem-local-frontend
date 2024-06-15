@@ -1,6 +1,6 @@
 import { useStateContext } from "../utils/internal.context";
 
-function Header({ category, title }: { category:string, title:string }) {
+function Header({ category, title }: { category?:string, title:string }) {
   const { currentColor } = useStateContext();
   return (
     <div className=" mb-10">

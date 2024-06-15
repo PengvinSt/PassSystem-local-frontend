@@ -1,6 +1,5 @@
 import axios from 'axios';
-import AppStore from '../store/app';
-import { ApolloClient, InMemoryCache, HttpLink, ApolloProvider } from '@apollo/client';
+import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
 export const client = new ApolloClient({
   link: new HttpLink({ uri: 'http://localhost:3001/graphql' }),
@@ -18,7 +17,7 @@ export default class AppApi {
     baseURL: SERVER_URL,
   });
 
-  constructor(store: AppStore) {
+  constructor() {
     //this.chat = new ChatApi(this, store);
     //this.socket = new SocketApi(SERVER_URL, user.uId, this, store);
   }

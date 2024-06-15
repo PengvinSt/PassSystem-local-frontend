@@ -1,5 +1,4 @@
 import { makeAutoObservable } from 'mobx';
-import AppStore from './app';
 
 
 export interface IUserSimple {
@@ -50,7 +49,7 @@ export default class UserStore {
       this.oneUser = user;
     }
 
-  constructor(private store: AppStore) {
+  constructor() {
     makeAutoObservable(this);
   }
 }

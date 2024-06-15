@@ -11,7 +11,7 @@ import AppContext from './utils/context'
 
 
 const store = new AppStore();
-const api = new AppApi(store);
+const api = new AppApi();
 import { ContextProvider } from './utils/internal.context'
 import { ApolloProvider } from '@apollo/client'
 

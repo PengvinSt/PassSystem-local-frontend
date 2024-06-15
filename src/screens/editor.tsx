@@ -1,24 +1,23 @@
 import { observer } from 'mobx-react'
 import { useParams } from 'react-router-dom';
 import { Header } from '../components';
-import { useState } from 'react';
 
-interface IUserSimple {
-  name: {
-    first: string;
-    last: string;
-  };
-  isOnline: boolean;
-  gender: string;
-  uuid: string;
-  job: string;
-  ban: boolean;
-  email: string;
-  picture: string;
-  role: string;
-  phone: string;
-  payment: number;
-}
+// interface IUserSimple {
+//   name: {
+//     first: string;
+//     last: string;
+//   };
+//   isOnline: boolean;
+//   gender: string;
+//   uuid: string;
+//   job: string;
+//   ban: boolean;
+//   email: string;
+//   picture: string;
+//   role: string;
+//   phone: string;
+//   payment: number;
+// }
 
 function InputField({name}: {name:string}){
   return(
@@ -30,8 +29,6 @@ function InputField({name}: {name:string}){
 }
 
 function Editor() {
-
-  const [updUser, setUpdUser] = useState<IUserSimple>()
 
   let { id } = useParams();
 
