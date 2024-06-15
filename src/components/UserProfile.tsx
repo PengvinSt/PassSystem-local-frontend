@@ -8,7 +8,7 @@ import { useAppContext } from '../utils/context';
 
 const UserProfile = () => {
   const { currentColor } = useStateContext();
-  const { store } = useAppContext()
+  const { store, api } = useAppContext()
   const userProfileData = [
   {
     icon: <FiSettings style={{ color: currentColor }}/>,
@@ -64,6 +64,10 @@ const UserProfile = () => {
         <div onClick={()=> {
           localStorage.removeItem('login');
           localStorage.removeItem('pass');
+          api.serverConnection.post("/setOffline", {
+            uuid: store.user.currentUser?.uuid,
+            isVerified: true,
+          });
           store.user.setAuth(false);
           }}>
         <Button
